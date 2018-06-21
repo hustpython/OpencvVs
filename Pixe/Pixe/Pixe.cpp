@@ -12,9 +12,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		for (int row = 195; row < 205; row++)
 		{
-			cout << (int)(*(m.data + m.step[0]))
-		}
+			cout << (int)(*(m.data + m.step[0]*row + m.step[1]*col))<<" ==> ";
+			*(m.data + m.step[0] * row + m.step[1] * col) = 255;
+			cout << (int)(*(m.data + m.step[0] * row + m.step[1] * col)) << endl;
+		}		
 	}
+	imshow("canvas", m);
+	cvWaitKey();
 	return 0;
 }
 
