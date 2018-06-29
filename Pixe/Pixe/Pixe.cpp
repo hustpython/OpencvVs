@@ -7,7 +7,7 @@ using namespace std;
 using namespace cv;
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Mat m(400, 400, CV_8U, Scalar(0));
+	Mat m(400, 400, CV_8UC3, Scalar(0,0,255));
 	for (int col = 0; col < 400; col++)
 	{
 		for (int row = 195; row < 205; row++)
@@ -18,6 +18,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		}		
 	}
 	imshow("canvas", m);
+	//cout << "m = " << endl << " " << m << endl << endl;
 	cvWaitKey();
 	return 0;
 }
