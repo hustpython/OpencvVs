@@ -32,9 +32,10 @@ int main(int argc, char** argv)
 		b[((uchar*)(src->imageData + i*src->width))[j*src->nChannels + 0]]++;
 		g[((uchar*)(src->imageData + i*src->width))[j*src->nChannels + 1]]++;
 		r[((uchar*)(src->imageData + i*src->width))[j*src->nChannels + 2]]++;
+		//printf("source_b=%i\n", b[((uchar*)(src->imageData + i*src->width))[j*src->nChannels + 0]]);
 	}
-
 	////构建直方图的累计分布方程，用于对直方图进行均衡化
+
 	double val[3] = { 0 };
 	for (i = 0; i<HDIM; i++)
 	{
@@ -44,8 +45,8 @@ int main(int argc, char** argv)
 		b[i] = val[0] * 255 / sum;
 		g[i] = val[1] * 255 / sum;
 		r[i] = val[2] * 255 / sum;
-		int resb = int(b[i]);
-		printf("b=%i\n", resb);
+		//int resb = int(b[i]);
+		//printf("b=%i\n", resb);
 	}
 	r;
 	// b = {0, 1, 3, 6, 12, 19, 30, 38, 45, 52, 56, 62, 66, 71, 76, 80, 83, 86, 89, 91, 93, 95, 96, ...,255}
