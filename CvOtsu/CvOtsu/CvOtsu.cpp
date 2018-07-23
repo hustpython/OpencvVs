@@ -37,7 +37,6 @@ int Otsu(IplImage* src)
 	int width = src->width;
 	long size = height * width;
 	//histogram 
-	//通过累计分布函数计算直方图
 	float histogram[256] = { 0 };
 	for (int m = 0; m < height; m++)
 	{
@@ -69,6 +68,7 @@ int Otsu(IplImage* src)
 		cnt1 = 0;
 		w0 = 0;
 		w1 = 0;
+		//通过累计分布函数直方图均衡化
 		for (j = 0; j < i; j++)
 		{
 			cnt0 += histogram[j];
