@@ -16,7 +16,6 @@ int main()
 	CvPoint2D32f srcTri[4], dstTri[4];
 	//创建数组指针
 	CvMat *warp_mat = cvCreateMat(3, 3, CV_32FC1);
-
 	IplImage *src, *dst;
 	//载入和显示图像
 	src = cvLoadImage("bird.png", CV_LOAD_IMAGE_UNCHANGED);
@@ -51,7 +50,6 @@ int main()
 	//显示透视变换后的图像
 	cvNamedWindow("透视变换", CV_WINDOW_AUTOSIZE);
 	cvShowImage("透视变换", dst);
-
 	cvWaitKey();
 	cvReleaseImage(&src);
 	cvReleaseImage(&dst);
